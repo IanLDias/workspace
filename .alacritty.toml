@@ -1,0 +1,64 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 15.0
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Bold"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[keyboard]
+bindings = [
+  # Disable Command + W
+  { key = "W", mods = "Command", action = "None" },
+
+  # Alt + Right to move forward a word
+  { key = "Right", mods = "Alt", chars = "\u001B[1;5C" },
+
+  # Alt + Left to move back a word
+  { key = "Left", mods = "Alt", chars = "\u001B[1;5D" },
+
+  # Command + Right to move to end of line
+  { key = "Right", mods = "Super", chars = "\u0005" },
+
+  # Command + Left to move to beginning of line
+  { key = "Left", mods = "Super", chars = "\u0001" },
+
+  # Command + C to copy
+  { key = "C", mods = "Command", action = "Copy" },
+
+  # Command + V to copy
+  { key = "V", mods = "Command", action = "Paste" },
+
+]
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+dynamic_title = true
+
+[window.padding]
+x = 16
+y = 16
