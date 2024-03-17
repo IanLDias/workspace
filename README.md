@@ -7,7 +7,8 @@ If the files exist already, create a backup and remove them.
 ln -s ~/.config/workspace/zsh/.zshrc ~/.zshrc
 
 - Alacritty
-ln -s ~/.config/workspace/.alacritty.toml ~/.config/.alacritty.toml
+ln -s ~/.config/workspace/.alacritty.toml ~/.config/alacritty/.alacritty.toml
+ln -s ~/.config/workspace/.alacritty.toml ~/.alacritty.toml
 
 - Tmux
 ln -s ~/.config/workspace/tmux/.tmux.conf ~/.tmux.conf
