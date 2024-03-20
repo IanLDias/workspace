@@ -1,13 +1,11 @@
 return {
   {
-    "FraserLee/ScratchPad",
-    -- There's no setup function for scratchpad, so unable to use the typical 'opts' config
+    "mtth/scratch.vim",
     config = function()
-      vim.g.scratchpad_autostart = 0
-      vim.g.scratchpad_autofocus = 1
+      vim.g.scratch_persistence_file = "~/.config/docs/scratchpad/scratchpad.txt"
     end,
     keys = {
-      { "<leader>tf", "<cmd>ScratchPad<cr>", desc = "Open ScratchPad" },
+      { "<leader>tf", "<cmd>Scratch<cr>", desc = "Open ScratchPad" },
     },
   },
 }
