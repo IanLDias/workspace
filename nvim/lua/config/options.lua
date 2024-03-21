@@ -4,3 +4,4 @@
 
 vim.opt.breakindent = true
 vim.opt.scrolloff = 10
+vim.o.tabstop = 4
