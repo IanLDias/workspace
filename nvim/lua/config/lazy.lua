@@ -22,6 +22,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.yaml" },
     -- import/override with your plugins
     { import = "plugins" },
+    { "CRAG666/code_runner.nvim", config = true },
     { "rose-pine/neovim", name = "rose-pine" },
     -- { "nvim-neo-tree/neo-tree.nvim", enabled = false },
     -- { import = "nvim-tree/nvim-tree.lua" },

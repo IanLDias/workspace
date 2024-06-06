@@ -13,12 +13,20 @@ map("t", "<leader>tt", "<C-\\><C-n><C-w>l", opts)
 -- For isort
 vim.api.nvim_set_keymap("n", "<leader>fi", ":Isort<CR>", { noremap = true, silent = true })
 
--- Copilot
-local opts = { silent = true, script = true, expr = true }
---
-map("i", "<C-p>", [[copilot#Previous()]], opts)
-map("i", "<C-n>", [[copilot#Next()]], opts)
-map("i", "<C-s>", [[copilot#Suggest()]], opts)
-map("i", "<C-a>", [[copilot#Accept("\<CR>")]], opts)
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_assume_mapped = true
+-- Window resizing keymaps
+map("n", "<leader>wh", "<cmd>vertical resize -3<CR>", opts)
+map("n", "<leader>wl", "<cmd>vertical resize +3<CR>", opts)
+map("n", "<leader>wk", "<cmd>resize +3<CR>", opts)
+map("n", "<leader>wj", "<cmd>resize -3<CR>", opts)
+
+map("n", "<leader>wf", ":tab split<CR>", opts)
+map("n", "<leader>wc", ":tabc<CR>", opts)
+
+-- Code runner
+map("n", "<leader>r", ":RunCode<CR>", { noremap = true, silent = false })
+map("n", "<leader>rf", ":RunFile<CR>", { noremap = true, silent = false })
+map("n", "<leader>rft", ":RunFile tab<CR>", { noremap = true, silent = false })
+map("n", "<leader>rp", ":RunProject<CR>", { noremap = true, silent = false })
+map("n", "<leader>rc", ":RunClose<CR>", { noremap = true, silent = false })
+map("n", "<leader>crf", ":CRFiletype<CR>", { noremap = true, silent = false })
+map("n", "<leader>crp", ":CRProjects<CR>", { noremap = true, silent = false })
