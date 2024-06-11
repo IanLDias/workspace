@@ -86,3 +86,6 @@ export PATH=$PATH:/Users/iandias/Desktop/Work/terravision
 
 # For Chatgpt CLI
 alias cgpt="chatgpt"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
