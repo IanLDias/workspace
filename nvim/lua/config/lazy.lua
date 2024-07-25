@@ -28,6 +28,10 @@ require("lazy").setup({
     -- { import = "nvim-tree/nvim-tree.lua" },
     { "CRAG666/code_runner.nvim", config = true },
     {
+      "tpope/vim-projectionist",
+      lazy = false,
+    },
+    {
       "fei6409/log-highlight.nvim",
       config = function()
         require("log-highlight").setup({})

@@ -6,9 +6,9 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Keybinding for ToggleTermFloat
-map("n", "<leader>tt", "<cmd>ToggleTerm direction=float<cr>", opts)
+map("n", "<leader>ty", "<cmd>ToggleTerm direction=float<cr>", opts)
 -- Hide Terminal in ToggleTerm
-map("t", "<leader>tt", "<C-\\><C-n><C-w>l", opts)
+map("t", "<leader>ty", "<C-\\><C-n><C-w>l", opts)
 
 -- For isort
 vim.api.nvim_set_keymap("n", "<leader>fi", ":Isort<CR>", { noremap = true, silent = true })
@@ -30,3 +30,6 @@ map("n", "<leader>rp", ":RunProject<CR>", { noremap = true, silent = false })
 map("n", "<leader>rc", ":RunClose<CR>", { noremap = true, silent = false })
 map("n", "<leader>crf", ":CRFiletype<CR>", { noremap = true, silent = false })
 map("n", "<leader>crp", ":CRProjects<CR>", { noremap = true, silent = false })
+
+-- lazygit override
+map("n", "<leader>gg", ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit <CR><CR>", { silent = true })
