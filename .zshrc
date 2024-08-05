@@ -1,5 +1,15 @@
+# Nvim as default
+export EDITOR="nvim"
+export VISUAL="nvim"
 # Use tmuxinator instead of tmux
 alias tmux="tmuxinator"
+# Docker aliases
+alias dcb="docker compose build "
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+
+# better ls
+alias eza="eza -1 --icons=always"
 
 # Path to your oh-my-zsh installation
 export ZSH="/Users/iandias/.oh-my-zsh"
@@ -89,3 +99,10 @@ alias cgpt="chatgpt"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source /Users/iandias/.config/broot/launcher/bash/br
