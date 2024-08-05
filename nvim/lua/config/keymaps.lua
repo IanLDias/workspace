@@ -6,9 +6,9 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Keybinding for ToggleTermFloat
-map("n", "<leader>ty", "<cmd>ToggleTerm direction=float<cr>", opts)
+map("n", "<C-\\>", "<cmd>ToggleTerm direction=float<cr>", opts)
 -- Hide Terminal in ToggleTerm
-map("t", "<leader>ty", "<C-\\><C-n><C-w>l", opts)
+map("t", "<C-\\>", "<cmd>ToggleTerm<cr>", opts)
 
 -- For isort
 vim.api.nvim_set_keymap("n", "<leader>fi", ":Isort<CR>", { noremap = true, silent = true })
