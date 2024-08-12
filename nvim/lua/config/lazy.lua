@@ -28,6 +28,7 @@ require("lazy").setup({
     { "rose-pine/neovim", name = "rose-pine" },
     -- { "nvim-neo-tree/neo-tree.nvim", enabled = false },
     -- { import = "nvim-tree/nvim-tree.lua" },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     { "CRAG666/code_runner.nvim", config = true },
     {
       "tpope/vim-projectionist",
