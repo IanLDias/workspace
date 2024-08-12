@@ -33,3 +33,18 @@ map("n", "<leader>crp", ":CRProjects<CR>", { noremap = true, silent = false })
 
 -- lazygit override
 map("n", "<leader>gg", ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit <CR><CR>", { silent = true })
+
+vim.keymap.set("n", "sgd", function()
+  require("telescope.builtin").lsp_definitions({
+    jump_type = "split",
+  })
+end, { desc = "Keywordprg definitions in split using Telescope" })
+
+vim.keymap.set("n", "svgd", function()
+  require("telescope.builtin").lsp_definitions({
+    jump_type = "vsplit",
+  })
+end, { desc = "Keywordprg definitions in split using Telescope" })
+
+-- Folding
+map("n", "<S-Tab>", "za", { noremap = true, silent = false })
