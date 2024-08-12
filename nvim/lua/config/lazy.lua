@@ -20,6 +20,8 @@ require("lazy").setup({
     { "CRAG666/code_runner.nvim", config = true },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.lang.yaml" },
+    -- onenord colourscheme
+    { "rmehri01/onenord.nvim" },
     -- import/override with your plugins
     { import = "plugins" },
     { "CRAG666/code_runner.nvim", config = true },
