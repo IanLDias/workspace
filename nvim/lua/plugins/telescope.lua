@@ -62,7 +62,7 @@ return {
     telescope.setup({
       defaults = {
         prompt_prefix = " ",
-        selection_caret = " ",
+        selection_caret = "> ",
         cwd = vim.fn.getcwd(),
         mappings = {
           i = {
