@@ -19,9 +19,6 @@ map("n", "<leader>wl", "<cmd>vertical resize +3<CR>", opts)
 map("n", "<leader>wk", "<cmd>resize +3<CR>", opts)
 map("n", "<leader>wj", "<cmd>resize -3<CR>", opts)
 
-map("n", "<leader>wf", ":tab split<CR>", opts)
-map("n", "<leader>wc", ":tabc<CR>", opts)
-
 -- Code runner
 map("n", "<leader>r", ":RunCode<CR>", { noremap = true, silent = false })
 map("n", "<leader>rf", ":RunFile<CR>", { noremap = true, silent = false })
@@ -48,3 +45,13 @@ end, { desc = "Keywordprg definitions in split using Telescope" })
 
 -- Folding
 map("n", "<S-Tab>", "za", { noremap = true, silent = false })
+
+-- Tabs
+map("n", "<leader>wf", ":tab split<CR>", opts)
+map("n", "<leader>wc", ":tabc<CR>", opts)
+map("n", "<leader>1", ":tabn 1<CR>", opts)
+map("n", "<leader>2", ":tabn 2<CR>", opts)
+map("n", "<leader>3", ":tabn 3<CR>", opts)
+map("n", "<leader>4", ":tabn 4<CR>", opts)
+map("n", "<leader>5", ":tabn 5<CR>", opts)
+map("n", "<leader>6", ":tabn 6<CR>", opts)
