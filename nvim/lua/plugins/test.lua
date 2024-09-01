@@ -10,6 +10,7 @@ return {
       adapters = {
         require("neotest-python")({
           args = { "-v" }, -- get more diff
+          python = "python",
         }),
       },
       output = {

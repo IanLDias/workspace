@@ -55,3 +55,6 @@ map("n", "<leader>3", ":tabn 3<CR>", opts)
 map("n", "<leader>4", ":tabn 4<CR>", opts)
 map("n", "<leader>5", ":tabn 5<CR>", opts)
 map("n", "<leader>6", ":tabn 6<CR>", opts)
+
+-- ZenMode. Good for debugger
+map("n", "<leader>wo", ":ZenMode<CR>", opts)

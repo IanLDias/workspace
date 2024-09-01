@@ -1,12 +1,16 @@
 # Nvim as default
 export EDITOR="nvim"
 export VISUAL="nvim"
-# Use tmuxinator instead of tmux
-alias tmux="tmuxinator"
+
+# Change location of vimrc
+export VIMINIT='source ~/.vim/.vimrc'
+
 # Docker aliases
 alias dcb="docker compose build "
 alias dcu="docker compose up -d"
 alias dcd="docker compose down"
+# Reload
+alias reload="nix-direnv-reload"
 
 # better ls
 alias eza="eza -1 --icons=always"
@@ -106,3 +110,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source /Users/iandias/.config/broot/launcher/bash/br
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/iandias/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/iandias/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/iandias/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/iandias/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

@@ -35,25 +35,25 @@ y = 0
 bindings = [
   # Disable Command + W
   { key = "W", mods = "Command", action = "None" },
-
   # Alt + Right to move forward a word
   { key = "Right", mods = "Alt", chars = "\u001B[1;5C" },
-
   # Alt + Left to move back a word
   { key = "Left", mods = "Alt", chars = "\u001B[1;5D" },
-
   # Command + Right to move to end of line
-  { key = "Right", mods = "Super", chars = "\u0005" },
-
+  { key = "Right", mods = "Command", chars = "\u0005" },
   # Command + Left to move to beginning of line
-  { key = "Left", mods = "Super", chars = "\u0001" },
-
+  { key = "Left", mods = "Command", chars = "\u0001" },
   # Command + C to copy
   { key = "C", mods = "Command", action = "Copy" },
-
-  # Command + V to copy
+  # Command + V to paste
   { key = "V", mods = "Command", action = "Paste" },
-
+  # Mac-friendly scrolling bindings
+  { key = "Up", mods = "Command", action = "ScrollPageUp" },
+  { key = "Down", mods = "Command", action = "ScrollPageDown" },
+  { key = "Up", mods = "Control", action = "ScrollLineUp" },
+  { key = "Down", mods = "Control", action = "ScrollLineDown" },
+  # Alternative scrolling mode toggle
+  { key = "S", mods = "Command", action = "ToggleViMode" },
 ]
 
 [scrolling]
