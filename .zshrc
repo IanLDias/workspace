@@ -17,6 +17,14 @@ alias reload="nix-direnv-reload"
 # better ls
 alias eza="eza -1 --icons=always"
 
+# ----- FZF -----
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+FD_OPTIONS="--follow --exclude .git --exclude .venv"
+export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
+export FZF_DEFAULT_COMMAND="git ls-files --cached --others --exclude-standard | fd --type f $FD_OPTIONS"
+
+
 # Path to your oh-my-zsh installation
 export ZSH="/Users/iandias/.oh-my-zsh"
 
