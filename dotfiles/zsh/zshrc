@@ -2,11 +2,6 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-# Set VIMINIT for Vim only, not for Neovim
-vim() {
-  VIMINIT='source ~/.vim/.vimrc' command vim "$@"
-}
-
 # Docker aliases
 alias dcb="docker compose build "
 alias dcu="docker compose up -d"
