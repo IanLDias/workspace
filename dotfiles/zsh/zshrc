@@ -51,11 +51,6 @@ export EDITOR="nvim"
 # Conda
 # export PATH="$HOME/miniconda3/bin:$PATH"
 
-# Lvim
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
-
 # Change location of lazygit config
 # export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -99,22 +94,6 @@ fi
 #     export VISUAL="nvim"
 #     export EDITOR="nvim"
 # fi
-
-# Terravision: https://github.com/patrickchugh/terravision
-export PATH=$PATH:/Users/iandias/Desktop/Work/terravision
-
-# For Chatgpt CLI
-alias cgpt="chatgpt"
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-source /Users/iandias/.config/broot/launcher/bash/br
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
