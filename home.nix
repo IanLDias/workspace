@@ -19,6 +19,16 @@
     ignores = ["*~" "*.swp" "*result*" ".direnv" ".DS_Store" "tags"];
   };
 
+  programs.zsh = {
+    enable = true;
+  };
+
+  programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable=true;
+  };
+
   home.file = {
     ".tmux.conf".source = ./dotfiles/tmux/tmux.conf;
     ".alacritty.toml".source = ./dotfiles/alacritty/alacritty.toml;
