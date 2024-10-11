@@ -16,7 +16,7 @@
     includes = [
       { path = ./dotfiles/git/gitconfig; }
     ];
-    ignores = ["*~" "*.swp" "*result*" ".direnv" ".DS_Store" "tags"];
+    ignores = ["*~" "*.swp" "*result*" ".direnv" ".DS_Store" "tags" ".projections.json"];
   };
 
   programs.zsh = {
