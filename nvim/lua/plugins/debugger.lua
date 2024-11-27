@@ -3,7 +3,7 @@ local dap = require("dap")
 dap.adapters.python = {
   type = "executable",
   command = "python",
-  args = { "-m", "debugpy.adapter" },
+  args = { "-Xfrozen_modules=off", "-m", "debugpy.adapter" },
 }
 
 dap.configurations.python = dap.configurations.python or {}
