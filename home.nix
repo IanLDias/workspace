@@ -21,6 +21,7 @@
 
   programs.zsh = {
     enable = true;
+    initExtra = builtins.readFile ./dotfiles/zsh/zshrc;
   };
 
   programs.direnv = {
@@ -32,6 +33,5 @@
   home.file = {
     ".tmux.conf".source = ./dotfiles/tmux/tmux.conf;
     ".alacritty.toml".source = ./dotfiles/alacritty/alacritty.toml;
-    ".zshrc".source = ./dotfiles/zsh/zshrc;
   };
 }
