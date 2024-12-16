@@ -37,9 +37,9 @@ augroup END
 
 " NETRW (File tree) options
 
-let g:netrw_banner=0 
+let g:netrw_banner=0
 let g:netrw_browse_split=4
-let g:netrw_altv=1 
+let g:netrw_altv=1
 let g:netrw_liststyle=3
 " Add optional packages.
 "
@@ -91,7 +91,8 @@ highlight ALEWarning cterm=underline ctermfg=NONE ctermbg=NONE
 " :PlugClean to remove plugins no longer in the list
 "
 " List plugins here
-call plug#begin()
+let data_dir = '~/.vim/plugged'
+call plug#begin(data_dir)
 
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'dense-analysis/ale'

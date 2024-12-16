@@ -4,11 +4,30 @@
   # Let Home Manager manage itself
   programs.home-manager.enable = true;
 
+
   programs.neovim = {
     enable = true;
     viAlias = false;
     vimAlias = false;
     # extraConfig = builtins.readFile ./nvim/init.lua;
+  };
+
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+    extraConfig = builtins.readFile ./dotfiles/vim/vimrc;
+    plugins = with pkgs.vimPlugins; [
+      vim-plug
+    ];
+
+  };
+
+  home.file = {
+    ".vim" = {
+      source = ./dotfiles/vim;
+      recursive = true;
+    };
+    ".vimrc".source = ./dotfiles/vim/vimrc;
   };
 
   programs.git = {
@@ -23,6 +42,8 @@
     enable = true;
     initExtra = builtins.readFile ./dotfiles/zsh/zshrc;
   };
+
+  programs.fzf.enable = true;
 
   programs.direnv = {
       enable = true;
