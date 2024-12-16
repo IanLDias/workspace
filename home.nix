@@ -44,6 +44,8 @@
   };
 
   programs.fzf.enable = true;
+  programs.bat.enable = true;
+  programs.ripgrep.enable = true;
 
   programs.direnv = {
       enable = true;
