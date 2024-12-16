@@ -9,6 +9,7 @@ return {
     "md",
     "yaml",
   },
+  keys = {},
   config = function()
     require("dbtpal").setup({
       path_to_dbt = "dbt",
