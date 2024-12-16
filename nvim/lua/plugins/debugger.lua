@@ -16,7 +16,9 @@ table.insert(dap.configurations.python, {
   cwd = "${workspaceFolder}/dagster",
   env = {
     PYTHONPATH = "${workspaceFolder}",
+    DAGSTER_PYTHON_ARGS = "-Xfrozen_modules=off", -- This affects spawned Dagster processes
   },
+  subProcess = true, -- Enable sub-process debugging
   console = "integratedTerminal",
 })
 

@@ -61,10 +61,16 @@ return {
             {
               id = "repl",
               size = 0.5,
+              opts = {
+                filetype = "python",
+              },
             },
             {
               id = "console",
               size = 0.5,
+              opts = {
+                filetype = "python",
+              },
             },
           },
           position = "bottom",
