@@ -1,0 +1,124 @@
+" When started as "evim", evim.vim will already have done these settings, bail
+" out.
+if v:progname =~? "evim"
+  finish
+endif
+
+" Get the defaults that most users want.
+source $VIMRUNTIME/defaults.vim
+
+" Remove neovim and vim sharing configuration
+set nocompatible
+
+" Allow pasting from outside
+" set paste
+
+if has("vms")
+  set nobackup		" do not keep a backup file, use versions instead
+else
+  set backup		" keep a backup file (restore to previous version)
+  if has('persistent_undo')
+    set undofile	" keep an undo file (undo changes after closing)
+  endif
+endif
+
+if &t_Co > 2 || has("gui_running")
+  " Switch on highlighting the last used search pattern.
+  set hlsearch
+endif
+
+" Put these in an autocmd group, so that we can delete them easily.
+augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+augroup END
+
+" NETRW (File tree) options
+
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+" Add optional packages.
+"
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+" The ! means the package won't be loaded right away but when plugins are
+" loaded during initialization.
+if has('syntax') && has('eval')
+  packadd! matchit
+endif
+
+" Map leader to Space
+let mapleader = " " "
+" Syntax highlighting
+syntax on
+filetype plugin indent on
+
+set wildmenu
+set relativenumber
+set mouse=a
+
+" Problem 1:
+" ctags doesn't work well with python out of the box
+" use https://github.com/universal-ctags/ctags
+" which solves most of the problems
+
+set tags=tags
+
+" ALE Configuration
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+let g:ale_virtualtext_cursor = 'disabled'  " Disable virtual text
+let g:ale_set_highlights = 0  " Disable default error highlighting
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 0
+
+" Custom ALE highlighting
+highlight ALEErrorSign ctermfg=Red ctermbg=NONE
+highlight ALEWarningSign ctermfg=Yellow ctermbg=NONE
+highlight ALEError cterm=underline ctermfg=NONE ctermbg=NONE
+highlight ALEWarning cterm=underline ctermfg=NONE ctermbg=NONE
+
+" Vim plugin manager
+" vim-plug: https://github.com/junegunn/vim-plugcall plug#begin()
+"
+" :PlugInstall to install the plugins
+" :PlugUpdate to install or update the plugins
+" :PlugDiff to review the changes from the last update
+" :PlugClean to remove plugins no longer in the list
+"
+" List plugins here
+let data_dir = '~/.vim/plugged'
+call plug#begin(data_dir)
+
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
+
+" Nord configuration
+let g:nord_cursor_line_number_background = 1
+let g:nord_uniform_diff_background = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+
+" Enable true color support
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" Set the colorscheme
+colorscheme nord
+
+" Custom overrides (if needed)
+highlight Comment guifg=#d8dee9 ctermfg=12
+
+" Set up fzf.vim
+set rtp+=/opt/homebrew/opt/fzf
