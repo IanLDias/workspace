@@ -14,7 +14,7 @@
 
   programs.vim = {
     enable = true;
-    defaultEditor = true;
+    # defaultEditor = true;
     extraConfig = builtins.readFile ./dotfiles/vim/vimrc;
     plugins = with pkgs.vimPlugins; [
       vim-plug
@@ -27,7 +27,6 @@
       source = ./dotfiles/vim;
       recursive = true;
     };
-    ".vimrc".source = ./dotfiles/vim/vimrc;
   };
 
   programs.git = {

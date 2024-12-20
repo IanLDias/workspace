@@ -11,7 +11,7 @@ source $VIMRUNTIME/defaults.vim
 set nocompatible
 
 " Allow pasting from outside
-set paste
+" set paste
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
