@@ -1,0 +1,2 @@
+
+nnoremap <BS> ciw
