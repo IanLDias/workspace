@@ -13,22 +13,26 @@
   };
 
   programs.vim = {
-    enable = true;
-    # defaultEditor = true;
-    extraConfig = builtins.readFile ./dotfiles/vim/vimrc;
-    plugins = with pkgs.vimPlugins; [
-      vim-plug
-    ];
-
+    enable = false;
   };
 
-  home.file = {
-    ".vim" = {
-      source = ./dotfiles/vim;
-      recursive = true;
-    };
+  # Define vim package at the top level where we define other packages
+  home.packages = with pkgs; [
+    (vim_configurable.override {
+      python3 = python3;
+      guiSupport = "no";
+      darwinSupport = true;
+    })
+  ];
+
+  # Manage the entire .vim directory structure
+  home.file.".vim" = {
+    source = ./vim;
+    recursive = true;
   };
 
+  # Link the vimrc to the right location
+  home.file.".vimrc".source = ./vim/vimrc;
   programs.git = {
     enable = true;
     includes = [
