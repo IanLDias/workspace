@@ -23,6 +23,7 @@
       guiSupport = "no";
       darwinSupport = true;
     })
+    pkgs.pyright
   ];
 
   # Manage the entire .vim directory structure

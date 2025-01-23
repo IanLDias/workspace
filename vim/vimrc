@@ -95,13 +95,73 @@ let data_dir = '~/.vim/plugged'
 call plug#begin(data_dir)
 
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
+Plug 'yegappan/lsp'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 
 call plug#end()
+
+" LSP configuration
+let lspOpts = {
+    \ 'aleSupport': v:false,
+    \ 'autoComplete': v:true,
+    \ 'autoHighlight': v:false,
+    \ 'autoHighlightDiags': v:true,
+    \ 'autoPopulateDiags': v:false,
+    \ 'completionMatcher': 'case',
+    \ 'completionMatcherValue': 1,
+    \ 'diagSignErrorText': ' ',
+    \ 'diagSignHintText': ' ',
+    \ 'diagSignInfoText': ' ',
+    \ 'diagSignWarningText': ' ',
+    \ 'echoSignature': v:true,
+    \ 'hideDisabledCodeActions': v:false,
+    \ 'highlightDiagInline': v:true,
+    \ 'hoverInPreview': v:false,
+    \ 'ignoreMissingServer': v:false,
+    \ 'keepFocusInDiags': v:true,
+    \ 'keepFocusInReferences': v:true,
+    \ 'completionTextEdit': v:true,
+    \ 'diagVirtualTextAlign': 'above',
+    \ 'diagVirtualTextWrap': 'default',
+    \ 'noNewlineInCompletion': v:false,
+    \ 'omniComplete': v:null,
+    \ 'outlineOnRight': v:false,
+    \ 'outlineWinSize': 20,
+    \ 'semanticHighlight': v:true,
+    \ 'showDiagInBalloon': v:true,
+    \ 'showDiagInPopup': v:true,
+    \ 'showDiagOnStatusLine': v:false,
+    \ 'showDiagWithSign': v:true,
+    \ 'showDiagWithVirtualText': v:false,
+    \ 'showInlayHints': v:false,
+    \ 'showSignature': v:true,
+    \ 'snippetSupport': v:false,
+    \ 'ultisnipsSupport': v:false,
+    \ 'useBufferCompletion': v:false,
+    \ 'usePopupInCodeAction': v:false,
+    \ 'useQuickfixForLocations': v:false,
+    \ 'vsnipSupport': v:false,
+    \ 'bufferCompletionTimeout': 100,
+    \ 'customCompletionKinds': v:false,
+    \ 'completionKinds': {},
+    \ 'filterCompletionDuplicates': v:false
+    \ }
+autocmd User LspSetup call LspOptionsSet(lspOpts)
+
+autocmd User LspSetup call LspAddServer([#{name: 'pyright',
+                 \   filetype: 'python',
+                 \   path: '/etc/profiles/per-user/iandias/bin/pyright-langserver',
+                 \   args: ['--stdio'],
+                 \   workspaceConfig: #{
+                 \     python: #{
+                 \       pythonPath: 'python'
+                 \   }}
+                 \ }])
 
 " Nord configuration
 let g:nord_cursor_line_number_background = 1

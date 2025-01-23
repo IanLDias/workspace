@@ -12,10 +12,6 @@ setlocal foldlevel=99
 " Enable autocompletion
 setlocal omnifunc=pythoncomplete#Complete
 
-" Highlight trailing whitespace
-highlight BadWhitespace ctermbg=red guibg=red
-match BadWhitespace /\s\+$/
-
 " Run Python files with F9
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 
