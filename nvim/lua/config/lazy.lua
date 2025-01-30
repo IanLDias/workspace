@@ -40,6 +40,9 @@ require("lazy").setup({
         require("log-highlight").setup({})
       end,
     },
+    {
+      "nvim-lua/plenary.nvim"
+    },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
